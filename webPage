@@ -1,0 +1,20 @@
+define({ 
+  
+  preShow: function(){
+   this.view.LoginCopy3.txtUserName.onDone=this.enableButton;
+    this.view.LoginCopy3.txtPassword.onDone=this.enableButton;
+  },
+  enableButton: function(){
+    var fieldOneValue=this.view.LoginCopy3.txtUserName.text;
+    var fieldTwoValue=this.view.LoginCopy3.txtPassword.text;
+    if(!kony.sdk.isNullOrUndefined(fieldOneValue) && !kony.sdk.isNullOrUndefined(fieldTwoValue) && fieldOneValue!=="" && fieldTwoValue!==""){
+      this.view.LoginCopy3.ButtonLogin.setEnabled(true);
+      this.view.LoginCopy3.ButtonLogin.skin="CopyCopyButtonSkinNormal3";
+    }
+    else{
+      this.view.LoginCopy3.ButtonLogin.setEnabled(false);
+      this.view.LoginCopy3.ButtonLogin.skin="defBtnNormal0c8e812cc360245";
+    }
+  }
+
+ });
